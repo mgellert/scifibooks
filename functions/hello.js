@@ -1,3 +1,5 @@
+import message from './data.json' assert {type: 'json'};
+
 export async function onRequest(context) {
     // Contents of context object
     const {
@@ -9,5 +11,5 @@ export async function onRequest(context) {
         data, // arbitrary space for passing data between middlewares
     } = context;
 
-    return new Response("Hello, world!");
+    return new Response(JSON.stringify(message));
 }
